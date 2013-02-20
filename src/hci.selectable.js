@@ -19,8 +19,8 @@
 
         // Helpers
         //
-        // Get the node un level under the el container,
-        // by any other sublevel node.
+        // Get the node one level under the 'el' container,
+        // by any other node in a sub-level.
         getNode = function (node) {
             var iGetNode = function iGetNode(node, previousNode) {
                 if (node === el.get(0)) {
