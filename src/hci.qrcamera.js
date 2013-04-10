@@ -8,7 +8,12 @@
     'use strict';
 
     var hci = root.hci || (root.hci = {}),
-        getElByString;
+        getElByString,
+        capture,
+        stream_obj,
+        interval,
+        scale,
+        interval_id;
 
     hci.qrcamera = {};
 
@@ -21,8 +26,8 @@
         hci.qrcamera.el_video = el_video = getElByString(options.el_video);
         hci.qrcamera.el_canvas = getElByString(options.el_canvas);
         hci.qrcamera.el_msg = el_msg = getElByString(options.el_msg);
-        hci.qrcamera.interval = options.interval || 1000;
-        hci.qrcamera.scale    = options.scale || 0.5;
+        interval = options.interval || 1000;
+        scale    = options.scale || 0.5;
         if (options.onRead) {
             qrcode.callback = options.onRead;
         }
@@ -36,11 +41,13 @@
                 success,
                 error;
 
-            success = function(stream) {
+            success = function (stream) {
                 el_video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+                stream_obj = stream;
+                hci.qrcamera.start_scan();
             };
 
-            error = function(error) {
+            error = function (error) {
                 console.log(error);
             };
 
@@ -56,9 +63,9 @@
 
         navigator.getUserMedia =
             navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia ||
-                navigator.msGetUserMedia;
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia;
 
         window.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);
     };
@@ -67,23 +74,28 @@
         return !!navigator.getUserMedia;
     };
 
-    hci.qrcamera.start = function () {
-        if (hci.qrcamera.interval_id) {
+    hci.qrcamera.start_scan = function () {
+        if (interval_id) {
             hci.qrcamera.stop();
         }
-        hci.qrcamera.interval_id = setInterval(function(video, scale) {
-            hci.qrcamera.capture()
-        }, hci.qrcamera.interval);
+        interval_id = setInterval(function (video, scale) {
+            capture()
+        }, interval);
+    };
+
+    hci.qrcamera.stop_scan = function () {
+        clearInterval(interval_id);
     };
 
     hci.qrcamera.stop = function () {
-        clearInterval(hci.qrcamera.interval_id);
+        hci.qrcamera.stop_scan();
+        stream_obj.stop();
     };
 
-    hci.qrcamera.capture = function () {
+    capture = function () {
         var el_video = hci.qrcamera.el_video,
-            w = el_video.videoWidth * hci.qrcamera.scale,
-            h = el_video.videoHeight * hci.qrcamera.scale,
+            w = el_video.videoWidth * scale,
+            h = el_video.videoHeight * scale,
             qr_canvas = hci.qrcamera.el_canvas.getContext('2d');
 
         qr_canvas.drawImage(el_video, 0, 0, w, h);
