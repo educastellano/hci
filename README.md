@@ -9,6 +9,10 @@ Makes selectable DOM nodes of a parent node.
 
 * jQuery
 
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.selectable-0.0.0.min.js)
+
 #### Usage
 
 	hci.selectable({
@@ -34,6 +38,10 @@ Some glue for [Crossroads](http://millermedeiros.github.com/crossroads.js/) and 
 * Crossroads
 * Hasher
 
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.crosshasher-0.0.0.min.js)
+
 #### Usage
 
 Define your routes as usual and call the init() method.
@@ -52,6 +60,9 @@ QR Camera for scanning QR codes, using [jsqrcode](https://github.com/LazarSoft/j
 
 * jsqrcode - You can get a minified version [here](https://raw.github.com/educastellano/hci/master/vendor/jsqrcode.min.js)
 
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.qrcamera-0.0.0.min.js)
 
 #### Usage
 
