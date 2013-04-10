@@ -1,5 +1,5 @@
 //
-// HCI CrossHasher. A combination of Crossroads and Hasher.
+// HCI CrossHasher. A little glue for Crossroads and Hasher.
 //
 // Requires:
 // - Crossroads (http://millermedeiros.github.com/crossroads.js/)
