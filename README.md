@@ -62,7 +62,7 @@ QR Camera for scanning QR codes, using [jsqrcode](https://github.com/LazarSoft/j
 
 #### Install
 
-Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.qrcamera-0.0.0.min.js)
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.qrcamera-0.0.1.min.js)
 
 #### Usage
 
