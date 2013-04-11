@@ -81,5 +81,10 @@ Stop it:
 
 	hci.qrcamera.stop();
 
+#### Changelog
+
+##### 0.0.1
+* hci.qrcamera.init onDOMContentLoad removed, navigator.getUserMedia() is called straight away.
+* hci.qrcamera.stop safe check for stream_obj 
 
 
