@@ -85,7 +85,13 @@
     hci.qrcamera.stop = function () {
         hci.qrcamera.stop_scan();
         if (stream_obj) {
-            stream_obj.stop();
+            if ('stop' in stream_obj) {
+                stream_obj.stop();
+            }
+            else {
+                hci.qrcamera.el_video.pause();
+                hci.qrcamera.el_video.src = null;
+            }
         }
     };
 
