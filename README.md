@@ -52,7 +52,7 @@ Define your routes as usual and call the init() method.
 
 ## hci.qrcamera
 
-QR Camera for scanning QR codes, using [jsqrcode](https://github.com/LazarSoft/jsqrcode) lib.
+Native camera for scanning QR codes, using [jsqrcode](https://github.com/LazarSoft/jsqrcode) lib.
 
 *Special thanks to [asbjornenge](https://github.com/asbjornenge) for his [demo app](https://github.com/asbjornenge/jsqrcode-scanner)*
 
@@ -86,5 +86,44 @@ Stop it:
 ##### 0.0.1
 * hci.qrcamera.init onDOMContentLoad removed, navigator.getUserMedia() is called straight away.
 * hci.qrcamera.stop safe check for stream_obj 
+
+## hci.msg
+
+Alerts and confirmation components
+
+#### Requires
+
+* jQuery
+
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.msg-0.0.0.min.js)
+
+#### Usage
+
+	hci.msg.confirm({
+		el: '#container',
+		msg: 'Are you sure?',
+		confirm: function () {
+			// confirm btn clicked		
+		},
+		cancel: function () {
+			// cancel btn clicked
+		}
+	})
+
+Parameters:
+
+* el [string or "jQuery object"]
+
+Optional parameters:
+
+* msg [string] Default: ''
+* msg_confirm [string] Default: 'Yes'
+* msg_cancel [string or false] Default: 'No'
+* confirm [function] 
+* cancel [function] 
+* remove [function] 
+
 
 
