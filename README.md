@@ -7,7 +7,7 @@ List of micro-libs available:
 * [hci.msg](https://github.com/educastellano/hci#hcimsg)
 * [hci.selectable](https://github.com/educastellano/hci#hciselectable)
 * [hci.crosshasher](https://github.com/educastellano/hci#hcicrosshasher)
-* [hci.camera](https://github.com/educastellano/hci#hciqrcamera)
+* [hci.qrcamera](https://github.com/educastellano/hci#hciqrcamera)
 
 ## hci.msg
 
