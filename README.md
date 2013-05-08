@@ -1,5 +1,51 @@
 # HCI
 
+A bunch of micro-libraries using the same namespace (hci). They work independently from each other.
+
+List of micro-libs available:
+
+* [hci.msg](https://github.com/educastellano/hci#hcimsg)
+* [hci.selectable](https://github.com/educastellano/hci#hciselectable)
+* [hci.crosshasher](https://github.com/educastellano/hci#hcicrosshasher)
+* [hci.camera](https://github.com/educastellano/hci#hciqrcamera)
+
+## hci.msg
+
+Alerts and confirmation components
+
+#### Requires
+
+* jQuery
+
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.msg-0.0.0.min.js)
+
+#### Usage
+
+	hci.msg.confirm({
+		el: '#container',
+		msg: 'Are you sure?',
+		confirm: function () {
+			// confirm btn clicked
+		},
+		cancel: function () {
+			// cancel btn clicked
+		}
+	})
+
+Parameters:
+
+* el [string or "jQuery object"]
+
+Optional parameters:
+
+* msg [string] Default: ''
+* msg_confirm [string] Default: 'Yes'
+* msg_cancel [string or false] Default: 'No'
+* confirm [function]
+* cancel [function]
+* remove [function]
 
 ## hci.selectable
 
@@ -87,43 +133,7 @@ Stop it:
 * hci.qrcamera.init onDOMContentLoad removed, navigator.getUserMedia() is called straight away.
 * hci.qrcamera.stop safe check for stream_obj 
 
-## hci.msg
 
-Alerts and confirmation components
-
-#### Requires
-
-* jQuery
-
-#### Install
-
-Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.msg-0.0.0.min.js)
-
-#### Usage
-
-	hci.msg.confirm({
-		el: '#container',
-		msg: 'Are you sure?',
-		confirm: function () {
-			// confirm btn clicked		
-		},
-		cancel: function () {
-			// cancel btn clicked
-		}
-	})
-
-Parameters:
-
-* el [string or "jQuery object"]
-
-Optional parameters:
-
-* msg [string] Default: ''
-* msg_confirm [string] Default: 'Yes'
-* msg_cancel [string or false] Default: 'No'
-* confirm [function] 
-* cancel [function] 
-* remove [function] 
 
 
 
