@@ -8,6 +8,7 @@ List of micro-libs available:
 * [hci.selectable](https://github.com/educastellano/hci#hciselectable)
 * [hci.crosshasher](https://github.com/educastellano/hci#hcicrosshasher)
 * [hci.qrcamera](https://github.com/educastellano/hci#hciqrcamera)
+* [hci.url](https://github.com/educastellano/hci#hciurl)
 
 ## hci.msg
 
@@ -133,6 +134,24 @@ Stop it:
 * hci.qrcamera.init onDOMContentLoad removed, navigator.getUserMedia() is called straight away.
 * hci.qrcamera.stop safe check for stream_obj 
 
+
+## hci.url
+
+Utilities for URL manipulation.
+
+#### Requires
+nothing
+
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.url-0.0.0.min.js)
+
+#### Usage
+
+* Parse search parameters to an object.
+
+		var params = hci.url.getParams();
+		console.log(params['name']);
 
 
 
