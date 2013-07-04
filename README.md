@@ -77,6 +77,8 @@ Get the minified version from [here](https://raw.github.com/educastellano/hci/ma
      
 	Optional parameters:	
 
+    * beforeShow [function]
+    * beforeHide [function]
 	* onShow [function]
 	* onHide [function]
 

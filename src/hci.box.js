@@ -19,6 +19,9 @@
             onBtnClick;
 
         onBtnClick = function () {
+            if (options.beforeShow) {
+                options.beforeShow();
+            }
             el.show();
             $('html').on('mousedown', onPageMouseDown);
             if (options.onShow) {
@@ -29,6 +32,9 @@
         onPageMouseDown = function (e) {
             if (el) {
                 if (!el.find($(e.target)).length) {
+                    if (options.beforeHide) {
+                        options.beforeHide();
+                    }
                     el.hide();
                     $('html').off('mousedown', onPageMouseDown);
                     if (options.onHide) {
