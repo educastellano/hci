@@ -5,6 +5,7 @@ A bunch of micro-libraries using the same namespace (hci). They work independent
 List of micro-libs available:
 
 * [hci.msg](https://github.com/educastellano/hci#hcimsg)
+* [hci.box](https://github.com/educastellano/hci#hcibox)
 * [hci.selectable](https://github.com/educastellano/hci#hciselectable)
 * [hci.crosshasher](https://github.com/educastellano/hci#hcicrosshasher)
 * [hci.qrcamera](https://github.com/educastellano/hci#hciqrcamera)
@@ -47,6 +48,37 @@ Optional parameters:
 * confirm [function]
 * cancel [function]
 * remove [function]
+
+## hci.box
+
+Generic manipulation of DOM containers.
+
+#### Requires
+
+* jQuery
+
+#### Install
+
+Get the minified version from [here](https://raw.github.com/educastellano/hci/master/lib/hci.box-0.0.0.min.js)
+
+#### Usage
+
+* Pop up a DOM element when click a button, and hide it when click anywhere else on the page:
+
+        hci.box.popable({
+            el: '#container',
+            btn: '#button'
+        })
+
+	Parameters:
+
+	* el  [string or "jQuery object"]
+	* btn [string or "jQuery object"]	
+     
+	Optional parameters:	
+
+	* onShow [function]
+	* onHide [function]
 
 ## hci.selectable
 
